@@ -24,7 +24,7 @@ function App() {
     try {
       const response = await axios.get('https://server-j98j.onrender.com/api/user');
       const modifiedUserData = response.data.map(user => {
-        const expiresInMs = new Date(user.expires_in) - new Date();
+        const expiresInMs = new Date(user.expires_in).getTime() - Date.now();
         const expiresInDays = Math.ceil(expiresInMs / (1000 * 60 * 60 * 24));
         return { ...user, expiresInDays };
       });
@@ -78,6 +78,34 @@ function App() {
     postUserData(randomUsername, randomKey);
   };
 
+
+  const sortedUserData = [...userData].sort((a, b) => {
+    if (a.generated_at && b.generated_at) {
+      return new Date(b.generated_at) - new Date(a.generated_at);
+    }
+    return 0;
+  });
+
+  const getRowColor = (expiresInDays) => {
+    let colorClass = '';
+    switch (expiresInDays) {
+      case 1:
+        colorClass = 'red-row';
+        break;
+      case 3:
+        colorClass = 'blue-row';
+        break;
+      case 7:
+        colorClass = 'white-row';
+        break;
+      default:
+        colorClass = '';
+        break;
+    }
+    return colorClass;
+  };
+  
+
   return (
     <div className="App">
       <div className="input-container1">
@@ -99,7 +127,7 @@ function App() {
       </div>
       <button className="button" onClick={generateUserData}>Generate Username & Key</button>
       
-      <table className='table-container'>
+       <table className='table-container'>
         <thead>
           <tr>
             <th>Username</th>
@@ -109,18 +137,19 @@ function App() {
           </tr>
         </thead>
         <tbody>
-      {userData.map((user, index) => (
-        <tr key={index}>
-          <td>{user.username} ({user.expiresInDays})</td>
-          <td>{user.key}</td>
-          <td>{user.generated_at ? new Date(user.generated_at).toLocaleString() : ''}</td>
-          <td>
-            <button className='copy' onClick={() => copyUserData(user.username, user.key)}>Copy</button>
-            <button onClick={() => deleteUser(user.username)}>Delete</button>
-          </td>
-        </tr>
-      ))}
-    </tbody>
+  {sortedUserData.map((user, index) => (
+    <tr key={index} className={getRowColor(user.expiresInDays)}>
+      <td>{user.username} ({user.expiresInDays})</td>
+      <td>{user.key}</td>
+      <td>{user.generated_at ? new Date(user.generated_at).toLocaleString() : ''}</td>
+      <td>
+        <button className='copy' onClick={() => copyUserData(user.username, user.key)}>Copy</button>
+        <button onClick={() => deleteUser(user.username)}>Delete</button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
       </table>
     </div>
   );
