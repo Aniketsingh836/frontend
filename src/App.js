@@ -14,7 +14,7 @@ function App() {
 
   const fetchAllUserData = async () => {
     try {
-      const response = await axios.get('https://backend-eight-swart.vercel.app/api/user');
+      const response = await axios.get('https://server-j98j.onrender.com/api/user');
       setUserData(response.data);
     } catch (error) {
       console.error('Error fetching user data:', error);
@@ -27,7 +27,7 @@ function App() {
 
   const postUserData = async (username, key) => {
     try {
-      const userDataResponse = await axios.post('https://backend-eight-swart.vercel.app/api/generate', {
+      const userDataResponse = await axios.post('https://server-j98j.onrender.com/api/generate', {
         username: username,
         key: key,
         expiry: expiryTimeFrame
@@ -42,7 +42,7 @@ function App() {
 
   const deleteUser = async (username) => {
     try {
-      const response = await axios.delete(`https://backend-eight-swart.vercel.app/api/user/${username}`);
+      const response = await axios.delete(`https://server-j98j.onrender.com/api/user/${username}`);
       console.log(response.data.message);
       fetchAllUserData();
     } catch (error) {
