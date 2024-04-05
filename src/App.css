@@ -51,6 +51,7 @@ tr:hover {
 
 .label {
   font-weight: bold;
+  font-size: larger;
 }
 
 .info {
@@ -61,4 +62,18 @@ tr:hover {
   margin-top: 20px;
   margin-left: 100px;
   margin-right: 100px;
+}
+
+.dropdown{
+  height: 38px;
+  width: 60px;
+  margin-left: 10px;
+}
+.dropdown-option {
+  font-size: 16px;
+  padding: 8px 12px; 
+}
+
+.copy{
+  margin-right: 40px;
 }
