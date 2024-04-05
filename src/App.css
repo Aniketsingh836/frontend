@@ -1,0 +1,64 @@
+/* App.css */
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 100px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 500px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.input-container {
+  margin-bottom: 10px;
+  margin-left: 500px;
+}
+.input-container1 {
+  margin-bottom: 10px;
+  margin-left: 500px;
+  margin-top: 60px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.info {
+  margin-left: 10px;
+  color: #666;
+}
+.table-container{
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
