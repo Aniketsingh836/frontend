@@ -126,7 +126,7 @@ function App() {
         <span className="info">{key}</span>
       </div>
       <button className="button" onClick={generateUserData}>Generate Username & Key</button>
-      
+      <div className='table-div'>
        <table className='table-container'>
         <thead>
           <tr>
@@ -151,6 +151,7 @@ function App() {
 </tbody>
 
       </table>
+      </div>
     </div>
   );
 }

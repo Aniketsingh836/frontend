@@ -124,4 +124,10 @@ tr:hover {
     width: 50%;
     margin-left: 0;
   }
+  .table-container{
+    margin-left: 0;
+  }
+  .table-div{
+    padding: 10px;
+  }
 }
