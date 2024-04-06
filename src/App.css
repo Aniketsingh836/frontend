@@ -1,7 +1,7 @@
 /* App.css */
 
 table {
-  width: 80%;
+  width: 70%;
   border-collapse: collapse;
   margin-top: 100px;
   
@@ -80,15 +80,15 @@ tr:hover {
 }
 
 .red-row {
-  background-color: #ce1b1b; /* Light red */
+  background-color: #ec5e5e; /* Light red */
 }
 
 .blue-row {
-  background-color: #279219; /* Light blue */
+  background-color: rgb(128, 128, 243); /* Light blue */
 }
 
-.white-row {
-  background-color: rgb(248, 165, 10); /* White */
+.yellow-row {
+  background-color: rgb(242, 245, 105); /* White */
 }
 
 
@@ -117,17 +117,18 @@ tr:hover {
   .input-container1,
   .input-container {
     width: 100%;
-    margin-left: 0;
+    margin-left: 70px;
   }
 
   .button {
     width: 50%;
-    margin-left: 0;
+    margin-left: 70px;
   }
   .table-container{
-    margin-left: 0;
+    margin-left:0;
   }
   .table-div{
-    padding: 10px;
+    padding: 0;
   }
+  
 }

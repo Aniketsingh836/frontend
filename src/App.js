@@ -90,13 +90,13 @@ function App() {
     let colorClass = '';
     switch (expiresInDays) {
       case 1:
-        colorClass = 'red-row';
+        colorClass = 'yellow-row';
         break;
       case 3:
         colorClass = 'blue-row';
         break;
       case 7:
-        colorClass = 'white-row';
+        colorClass = 'red-row';
         break;
       default:
         colorClass = '';
@@ -110,7 +110,7 @@ function App() {
     <div className="App">
       <div className="input-container1">
         <h1>User Creation</h1>
-        <label className="label">Expiry Time Frame:</label>
+        <label className="label">Choose Time Duration:</label>
         <select className="dropdown" value={expiryTimeFrame} onChange={handleExpiryTimeFrameChange}>
           <option className="dropdown-option" value="1">1</option>
           <option className="dropdown-option" value="3">3</option>
@@ -125,7 +125,7 @@ function App() {
         <label className="label">Key:</label>
         <span className="info">{key}</span>
       </div>
-      <button className="button" onClick={generateUserData}>Generate Username & Key</button>
+      <button className="button" onClick={generateUserData}>Generate Key</button>
       <div className='table-div'>
        <table className='table-container'>
         <thead>
