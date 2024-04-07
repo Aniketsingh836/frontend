@@ -4,10 +4,10 @@ table {
   width: 70%;
   border-collapse: collapse;
   margin-top: 100px;
-  
 }
 
-th, td {
+th,
+td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -22,7 +22,7 @@ tr:hover {
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -33,21 +33,22 @@ tr:hover {
   margin-top: 20px;
   cursor: pointer;
   border-radius: 5px;
-  margin-left: 150px;
 }
-
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+  width: 100%;
+}
 .button:hover {
   background-color: #45a049;
 }
 
 .input-container {
-  margin-bottom: 10px;
-  margin-left: 500px;
 }
 .input-container1 {
-  margin-bottom: 10px;
-  margin-left: 500px;
-  margin-top: 60px;
+  background-color: "pink";
 }
 
 .label {
@@ -59,26 +60,41 @@ tr:hover {
   margin-left: 10px;
   color: #666;
 }
-.table-container{
+.table-container {
   margin-top: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+
+  width: 100%;
 }
 
-.dropdown{
+.dropdown {
   height: 38px;
   width: 60px;
   margin-left: 10px;
 }
 .dropdown-option {
   font-size: 16px;
-  padding: 8px 12px; 
+  padding: 8px 12px;
 }
-
-.copy{
-  margin-right: 40px;
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
-
+.dropdownContainer {
+  display: "flex";
+  justify-content: "center";
+}
+.copy {
+}
+.tableView {
+  width: 100%;
+}
+.container {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
 .red-row {
   background-color: #ec5e5e; /* Light red */
 }
@@ -91,44 +107,13 @@ tr:hover {
   background-color: rgb(242, 245, 105); /* White */
 }
 
-
-@media screen and (min-width: 600px) {
+@media only screen and (min-width: 320px) and (max-width: 768px) {
   .App {
-    max-width: 600px;
-    margin: 0 auto;
+    /* max-width: 600px;
+    margin: 0 auto; */
   }
-
-  .input-container1,
-  .input-container {
-    display: inline-block;
-    width: 48%;
-    vertical-align: top;
-    margin-left:20%;
-    margin-bottom: 0;
+  .table-container {
   }
-  
-
-  .button {
-    width: 300px;
+  .tableView {
   }
-}
-
-@media screen and (max-width: 600px) {
-  .input-container1,
-  .input-container {
-    width: 100%;
-    margin-left: 70px;
-  }
-
-  .button {
-    width: 50%;
-    margin-left: 70px;
-  }
-  .table-container{
-    margin-left:0;
-  }
-  .table-div{
-    padding: 0;
-  }
-  
 }

@@ -39,10 +39,6 @@ function App() {
   }, []);
 
 
-  useEffect(() => {
-    fetchAllUserData();
-  }, []);
-
   const postUserData = async (username, key) => {
     try {
       const currentDate = new Date(); // Get current date and time
@@ -108,25 +104,29 @@ function App() {
 
   return (
     <div className="App">
-      <div className="input-container1">
+      <div className='mainContainer'>
+ <div className='bodyContainer' >
         <h1>User Creation</h1>
-        <label className="label">Choose Time Duration:</label>
+<div className='dropdownContainer'>
+  <label className="label">Choose Time Duration:</label>
         <select className="dropdown" value={expiryTimeFrame} onChange={handleExpiryTimeFrameChange}>
           <option className="dropdown-option" value="1">1</option>
           <option className="dropdown-option" value="3">3</option>
           <option className="dropdown-option" value="7">7</option>
         </select>
+</div>
+        
       </div>
-      <div className="input-container">
+      <div >
         <label className="label">Username:</label>
         <span className="info">{username}</span>
       </div>
-      <div className="input-container">
+      <div >
         <label className="label">Key:</label>
         <span className="info">{key}</span>
       </div>
       <button className="button" onClick={generateUserData}>Generate Key</button>
-      <div className='table-div'>
+      <div  className='tableView'>
        <table className='table-container'>
         <thead>
           <tr>
@@ -152,6 +152,8 @@ function App() {
 
       </table>
       </div>
+      </div>
+     
     </div>
   );
 }
